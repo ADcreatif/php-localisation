@@ -1,0 +1,27 @@
+{
+  "name": "adcreatif/php-localisation",
+  "description": "Allows to very simply translate your website in any langage. It keeps languages files as xx.txt and keeps them redable in your code",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alan Dedobbeler",
+      "email": "contact@ad-creatif.com",
+      "homepage": "https://ad-creatif.com",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "ADcreatif\\Localisation\\": "src/"
+    }
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "php": "^7.1",
+    "ext-gettext": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0"
+  }
+}
