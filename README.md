@@ -1,7 +1,7 @@
 # Localisation
 **The easy way to translate your php websites**
 
-This project is a personal tool helping me with translations and localisation on my scratch
+This project is a personal tool helping me to store translations/localisation on my scratch
 projects.
 
  - It doesn't needs any instalation. For persistance, i'll use .txt files.

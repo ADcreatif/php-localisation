@@ -16,7 +16,7 @@
       "ADcreatif\\Localisation\\": "src/"
     }
   },
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "require": {
     "php": "^7.1",
     "ext-gettext": "*"
