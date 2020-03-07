@@ -8,12 +8,6 @@ class Localisation
 {
     private $dirname = __DIR__ . '/../lang/';
 
-
-    function _(string $word, string $lang = 'EN'): string
-    {
-        return $this->getTranslation($word, $lang);
-    }
-
     function getTranslation(string $sentence, string $lang = 'EN'): string
     {
         $localisation = $this->getLocalisation($lang);

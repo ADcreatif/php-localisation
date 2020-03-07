@@ -15,14 +15,24 @@ update.
     composer require adcreatif/php-localisation
 ```
 ## usage
-### define langage
 
 ```php
-    _('my sentence to translate');
+<?php 
+// Autoload files using Composer autoload
+require_once __DIR__ . '/../vendor/autoload.php'; 
+
+// Gives access to translations functions
+use Common;
+
+// define the global variable $lang (for ex with session)
+$lang = $_SESSION['lang'];
+
+// now you can use it eveywhere
+echo _('my sentence to translate');
 ```
 ## Next versions
-automaticaly scan new translations
-GUI for editing and translate
+ - automaticaly scan new translations
+ - GUI for editing and translate
 
 ## License
 This project is licensed under the MIT License. See the  [license file]() for more information.

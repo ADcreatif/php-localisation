@@ -19,7 +19,8 @@
   "minimum-stability": "dev",
   "require": {
     "php": "^7.1",
-    "ext-gettext": "*"
+    "ext-gettext": "*",
+    "adcreatif/php-localisation": "dev-master"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.0"
