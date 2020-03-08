@@ -10,7 +10,7 @@ $localisation = new Localisation();
 $localisation
     ->setDefaultLangage('EN')
     ->setCurrentLangage('EN')
-    ->setDirname('../lang/');
+    ->setDirname(__DIR__ . "/../lang/");
 
 
 require_once "../src/Common.php";

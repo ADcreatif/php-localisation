@@ -38,7 +38,7 @@ class Localisation
 
     public function getDirname(): String
     {
-        return __DIR__ . "/" . $this->dirname;
+        return $this->dirname;
     }
 
     function getLangagesFiles(): array
