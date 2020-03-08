@@ -32,6 +32,7 @@ class Localisation
 
     public function setDirname(string $dirname): Localisation
     {
+        echo "$dirname<br>";
         $this->dirname = $dirname;
         return $this;
     }

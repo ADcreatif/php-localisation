@@ -47,7 +47,6 @@ class Storage
         }
     }
 
-
     function write_file(string $lang, string $dirname): array
     {
         try {
@@ -66,6 +65,4 @@ class Storage
             die($exception->getMessage());
         }
     }
-
-
 }
