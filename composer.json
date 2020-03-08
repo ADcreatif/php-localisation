@@ -1,7 +1,13 @@
 {
   "name": "adcreatif/php-localisation",
-  "description": "Allows to very simply translate your website in any langage. It keeps languages files as xx.txt and keeps them redable in your code",
+  "description": "Translate your php website in any langage. lang are stored as xx.txt and easy to edit",
   "type": "library",
+  "keywords": [
+    "php",
+    "translation",
+    "localisation",
+    "txt"
+  ],
   "license": "MIT",
   "authors": [
     {
@@ -16,11 +22,13 @@
       "ADcreatif\\Localisation\\": "src/"
     }
   },
-  "minimum-stability": "dev",
+  "autoload-dev": {
+    "psr-4": {
+      "ADcreatif\\Tests\\": "tests"
+    }
+  },
   "require": {
-    "php": "^7.1",
-    "ext-gettext": "*",
-    "adcreatif/php-localisation": "dev-master"
+    "php": "^7.1"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.0"

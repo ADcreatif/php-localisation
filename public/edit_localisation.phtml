@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <form class="form-inline">
+            <label for="from"></label> <select id="from" name="from" class="form-control ">
+                <?php if (!empty($languages)): ?>
+                    <?php foreach ($languages as $language): ?>
+                        <?php $selected = isset($from) && $from === $language ? 'selected' : '' ?>
+                        <option value="<?= $language ?>" <?= $selected ?> ><?= $language ?></option>
+                    <?php endforeach ?>
+                <?php endif ?>
+            </select>
+
+            <label for="to"></label> <select id="to" name="to" class="form-control ">
+                <?php if (!empty($languages)): ?>
+                    <?php foreach ($languages as $language): ?>
+                        <?php $selected = isset($to) && $to === $language ? 'selected' : '' ?>
+                        <option value="<?= $language ?>" <?= $selected ?> ><?= $language ?></option>
+                    <?php endforeach ?>
+                <?php endif ?>
+            </select>
+            <button class="form-control btn btn-secondary my-2 my-sm-0" name="lang" type="submit">afficher</button>
+        </form>
+    </div>
+</nav>
+<main class="container">
+    <?php if (!empty($translations)): ?>
+        <form class="mt-5">
+            <ul>
+                <?php foreach ($translations as $key => $translation): ?>
+                    <li class="form-group row">
+                        <label class="label-form-control col-6" for="<?= $key ?>"><?= $translation['from'] ?></label>
+                        <?php if (strlen($translation['to']) > 50): ?>
+                            <textarea class="col-6" id="<?= $key ?>" name="<?= $key ?>"><?= $translation['to'] ?></textarea>
+                        <?php else: ?>
+                            <input class="col-6" id="<?= $key ?>" name="<?= $key ?>" value="<?= $translation['to'] ?>">
+                        <?php endif ?>
+                    </li>
+                <?php endforeach ?>
+            </ul>
+        </form>
+    <?php endif ?>
+</main>
+</body>
+</html>
