@@ -126,13 +126,15 @@ class Localisation
         if (!$hash && $lang_to === $this->getDefaultLangage()) {
             // this sentence unknown, adding it to default language
             $hash = $this->addTranslation($sentence, $this->getDefaultLangage());
+
         }
 
-        if (array_key_exists($hash, $loc_to)) {
+        if ($hash && array_key_exists($hash, $loc_to)) {
+            // translation found.
             return $loc_to[$hash];
         }
 
-        // todo : this location doesn't exists in source base and should be initialized
+        // sentence hadn't been found returning original one
         return $sentence;
     }
 

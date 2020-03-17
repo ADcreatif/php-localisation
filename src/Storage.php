@@ -33,18 +33,25 @@ class Storage
     {
         try {
             $fileName = $dirname . $lang . '.txt';
+            $content = [];
 
             if (!file_exists($dirname))
                 throw new DomainException("Can't find directory : \"" . $dirname . '"');
 
-            if (!file_exists($fileName))
+            if (!file_exists($fileName)) {
+                file_put_contents($fileName, '');
                 throw new DomainException("file \"$fileName\" can not be found creating it.");
+            }
 
-            return unserialize(file_get_contents($fileName));
+            if ($content)
+                $content = unserialize(file_get_contents($fileName));
 
         } catch (DomainException $exception) {
-            die($exception->getMessage());
+            echo $exception->getMessage();
         }
+
+        return $content;
+
     }
 
     function write_file(string $lang, string $dirname): array
